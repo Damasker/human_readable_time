@@ -7,15 +7,16 @@ $( "span.hours-dec" ).html(function() {
 $( "div.total-hours" ).html(function() {
     this.innerText = this.innerText.replace("hours", "");
 })
-
-$( "td.hours" ).html(function() {
-    var time = this.innerHTML;
-    var result = (time%1);
-    var min = String(result*0.6).slice(2, 4);
-    var hours = String(time).slice(0, 1);
-    if(parseInt(min) > 0) {
-	      this.innerHTML = hours+":"+min.replace(".","");
-      } else {
-        this.innerHTML = hours+":00";
-      }
-})
+$("table.time-entries").html(function() {
+  $( "td.hours" ).html(function() {
+      var time = this.innerHTML;
+      var result = (time%1);
+      var min = String(result*0.6).slice(2, 4);
+      var hours = String(time).slice(0, 1);
+      if(parseInt(min) > 0) {
+	       this.innerHTML = hours+":"+min.replace(".","");
+       } else {
+         this.innerHTML = hours+":00";
+       }
+     })
+   })
