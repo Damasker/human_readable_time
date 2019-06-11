@@ -23,7 +23,11 @@
           var time = this.innerHTML;
           var result = (time%1);
           console.log("result "+result);
-          var min = String(result*60).slice(0, 2);
+          if(result < 0.16){
+            var min = String(result*0.6).slice(2, 4);
+          }else{
+            var min = String(result*60).slice(0, 2);
+          }
           console.log("min "+min);
           var hours = String(time).slice(0, 1);
           if(parseInt(min) > 0) {
