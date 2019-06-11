@@ -1,7 +1,7 @@
  $(document).ready(function() {
    $('div.total-hours').html(function() {
      var content = this.innerHTML;
-     this.innerHTML = content+"<button type='button' class='hmn' id='hmn'>Human readable</button>"+"<button type='button' class='dec' id='dec'>Redmain readable</button>";
+     this.innerHTML = content+"<span calss='hours'><button type='button' class='hmn' id='hmn'>Human readable</button></span>"+"<span class='hours'><button type='button' class='dec' id='dec'>Redmain readable</button></span>";
      document.getElementById('dec').style.visibility = 'hidden';
    });
    $('#hmn').click(function() {
