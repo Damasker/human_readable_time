@@ -1,5 +1,5 @@
  $(document).ready(function() {
-   $('p.buttons').html(function() {
+   $('div.total-hours').html(function() {
      var content = this.innerHTML;
      this.innerHTML = content+"<button type='button' class='hmn' id='hmn'>Human readable</button>"+"<button type='button' class='dec' id='dec'>Redmain readable</button>";
      document.getElementById('dec').style.visibility = 'hidden';
@@ -11,7 +11,12 @@
      document.getElementById('dec').style.visibility = 'visible';
      $( "span.hours-dec" ).html(function() {
        var dec = this.innerHTML;
-       var result = (dec*0.6);
+       console.log(dec);
+       if(dec < 0.16){
+         var result = (dec*0.6);
+       }else{
+         var result = (dec*60);
+       }
        var str = String(result);
        this.innerHTML = ":"+(str.replace("0.","")).slice(0, 2);
      });
