@@ -20,9 +20,7 @@
        var str = String(result);
        this.innerHTML = ":"+(str.replace("0.","")).slice(0, 2);
      });
-     $( "div.total-hours" ).html(function() {
-      this.innerText = this.innerText.replace("hours", "");
-    });
+
     $("table.time-entries").html(function() {
       $( "td.hours" ).html(function() {
           var time = this.innerHTML;
